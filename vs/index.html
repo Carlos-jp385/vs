@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input placeholder="Digite o nome de contato">
+    <p></p>
+    <button onclick="search()">Procurar Contato</button>
+
+
+</body>
+<script>
+
+    let p = document.querySelector('p')
+    let input = document.querySelector('input')
+
+    const contacts = [
+        { name: 'Carlos', number: '(11) 94334-5454' },
+        { name: 'Vitor', number: '(11) 98181-6565' },
+        { name: 'Anderson', number: '(11) 97878-9696' },
+        { name: 'Maria', number: '(11) 94545-3131' },
+    ]
+
+    function search() {
+
+
+        for (const contact of contacts){
+
+
+            if (input.value.toLowerCase() === contact.name.toLowerCase()) {
+
+                p.innerHTML = `Contato Encontrado Nome:${contact.name} Tel: ${contact.number}`
+
+                break
+            } else {
+                p.innerHTML = "Contato nao encontrado, temte movamente"
+            }
+        }
+
+    }
+</script>
+
+</html>
